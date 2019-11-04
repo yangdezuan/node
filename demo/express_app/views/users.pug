@@ -1,12 +1,15 @@
 doctype html
-  html(lang='en')
+html(lang='en')
   head
-  title pug/jade学习
-  meta(charset='utf-8')
-  script(type="text/javascript").
-  const message = 'hello';
-
+    title Jade
+    script(type='text/javascript').
+      const foo = true;
+      let bar = function() {};
+      if (foo) {
+        bar(1 + 5)
+      }
   body
+    .bd#app 登录中心
     div(id='contaner' class='style1')
     p(id='p1' style={color:'red',fontsize:'20px'}) 用户名:
     input(name='username' type='text' placeholder='请输入用户名' value=username)
