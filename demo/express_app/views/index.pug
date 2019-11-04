@@ -3,3 +3,10 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  div
+  a(href="/news") 新闻
+  -var a = 12;
+        if a%2 == 0
+            div(style={background:'#cccccc'}) 新闻介绍1
+        else
+            div(style={background:'green'}) 新闻介绍2
