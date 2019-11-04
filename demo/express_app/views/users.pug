@@ -1,0 +1,23 @@
+doctype html
+  html(lang='en')
+  head
+  title pug/jade学习
+  meta(charset='utf-8')
+  script(type="text/javascript").
+  const message = 'hello';
+
+  body
+    div(id='contaner' class='style1')
+    p(id='p1' style={color:'red',fontsize:'20px'}) 用户名:
+    input(name='username' type='text' placeholder='请输入用户名' value=username)
+    br
+    p 密码:
+    input(name='password' type="password" placeholder='请输入密码' value=password)
+    //标签纯文，点号紧跟
+    script.
+    -var k = 10;
+    if(k % 2 === 0)
+      p 登录成功
+    else
+      p 用户名密码出错
+
