@@ -6,21 +6,33 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var categorysRouter = require('./routes/categorys');
+var cors = require('cors');
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//跨域
+app.use(
+  cors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 200
+  })
+);
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+//接口
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/categorys', categorysRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
