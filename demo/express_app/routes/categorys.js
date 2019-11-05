@@ -4,6 +4,7 @@ var router = express.Router();
 //暴露接口
 router.get('/', (req, res, next) => {
   const { username, password } = req.query;
+  console.log(req.query);
   res.render('categorys', {
     categorys: JSON.stringify([
       {
